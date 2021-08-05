@@ -10,8 +10,12 @@ import {name as appName} from './app.json';
 import Config from './src/config';
 
 GoogleSignin.configure({
-  webClientId: Config.clientId,
-  offlineAccess: false,
+  scopes: [
+    'https://www.googleapis.com/auth/youtube.force-ssl',
+    'https://www.googleapis.com/auth/youtube',
+    'https://www.googleapis.com/auth/youtube.readonly',
+    'https://www.googleapis.com/auth/youtube.upload',
+  ],
   androidClientId: Config.androidClientId,
   iosClientId: Config.iosClientId,
 });
