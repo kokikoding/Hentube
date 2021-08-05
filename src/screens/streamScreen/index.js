@@ -65,7 +65,6 @@ const index = ({navigation, route}) => {
               <Text style={styles.buttonText}>
                 {isStreaming ? 'STOP STREAMING' : 'START STREAMING'}
               </Text>
-              <Text style={styles.buttonText}>url streaming: {url}</Text>
             </View>
           </TouchableOpacity>
         </View>

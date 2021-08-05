@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import {Colors, Fonts} from '../../misc';
 
@@ -52,5 +52,14 @@ export default StyleSheet.create({
     fontFamily: Fonts.bold,
     letterSpacing: 1,
     textTransform: 'uppercase',
+  },
+  userInput: {
+    width: Dimensions.get('window').width * 0.8,
+    marginVertical: 16,
+    backgroundColor: Colors.lighGrey,
+    borderRadius: 10,
+    fontFamily: Fonts.regular,
+    letterSpacing: 1,
+    fontSize: 16,
   },
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -8,14 +8,16 @@ import {
   PermissionsAndroid,
   Platform,
   Alert,
+  TextInput,
 } from 'react-native';
 
 import {Images} from '../../misc';
 import styles from './styles';
 
 const index = ({navigation}) => {
+  const [streamKey, updateStreamKey] = useState();
+
   const createNewStream = async () => {
-    const streamKey = '20tv-2k85-ke0a-spe6-9x47';
     const ingestionAddress = 'rtmp://a.rtmp.youtube.com/live2';
     if (streamKey && ingestionAddress) {
       if (Platform.OS === 'android') {
@@ -57,6 +59,8 @@ const index = ({navigation}) => {
           ingestionAddress,
         });
       }
+    } else {
+      Alert.alert('You need input the stream key first');
     }
   };
 
@@ -67,6 +71,12 @@ const index = ({navigation}) => {
         <View style={styles.logoView}>
           <Image source={Images.horizontalLogo} style={styles.logo} />
           <Text style={styles.labelText}>Live Streaming</Text>
+          <TextInput
+            style={styles.userInput}
+            value={streamKey}
+            placeholder="Put your stream key here"
+            onChangeText={updateStreamKey}
+          />
         </View>
         <View style={styles.buttonView}>
           <TouchableOpacity
