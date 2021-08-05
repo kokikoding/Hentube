@@ -40,4 +40,17 @@ export default StyleSheet.create({
     letterSpacing: 1,
     textTransform: 'uppercase',
   },
+  loginButton: {
+    borderRadius: 8,
+    borderWidth: 1,
+    padding: 16,
+    borderColor: Colors.yellow,
+  },
+  loginText: {
+    fontSize: 18,
+    color: Colors.yellow,
+    fontFamily: Fonts.bold,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+  },
 });

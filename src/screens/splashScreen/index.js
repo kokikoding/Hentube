@@ -8,7 +8,10 @@ import {author, version} from '../../../package.json';
 const index = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Main');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Main'}],
+      });
     }, 3000);
   }, []);
 
